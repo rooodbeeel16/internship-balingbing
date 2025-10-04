@@ -19,7 +19,6 @@
             scroll-behavior: smooth;
         }
 
-        /* Custom CSS for a smoother header transition */
         .header-scrolled {
             background-color: rgba(255, 255, 255, 0.9);
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -27,7 +26,6 @@
             -webkit-backdrop-filter: blur(10px);
         }
 
-        /* Custom animation for scroll reveal effect */
         .hidden-reveal {
             opacity: 0;
             transform: translateY(20px);
@@ -45,7 +43,6 @@
         overflow: hidden;
         }
 
-        /* Optional subtle fade-in animation */
         @keyframes fadeInUp {
         from { opacity: 0; transform: translateY(30px); }
         to { opacity: 1; transform: translateY(0); }
@@ -55,15 +52,10 @@
         animation: fadeInUp 1s ease-out forwards;
         }
 
-
-
-
-        /* Custom fade-in-from-bottom effect for the home section */
         .fade-overlay {
             background-image: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
         }
 
-        /* Custom hover effect for blog cards */
         .blog-card-hover {
             transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
         }
@@ -83,7 +75,6 @@
             animation: fadeIn 1s ease-out forwards;
         }
 
-        /* New custom style for video container hover and overlay */
         .video-container {
             position: relative;
             overflow: hidden;
@@ -94,47 +85,25 @@
             transform: scale(1.05);
             box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1), 0 4px 6px rgba(0, 0, 0, 0.05);
         }
-        
-        /* Gradient overlay for video labels */
-        .video-fade-overlay {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            height: 50%;
-            background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
-            pointer-events: none; /* Allows clicks to pass through to the video */
-        }
-        .video-label {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
+      
+
+        .blog-card-hover {
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
         }
 
-        /* Add to your CSS file or a <style> tag */
-.blog-card-hover {
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-}
-
-.blog-card-hover:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-}
-
-        
+        .blog-card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
     </style>
+
 </head>
 <body class="bg-gray-100 text-gray-800">
-
-    <!-- Header -->
    <header id="main-header" 
   class="fixed top-0 z-50 w-full h-20 bg-gray-950
          shadow-[0_6px_20px_rgba(0,0,0,0.6)] border-b border-gray-800
          transition-all duration-300">
   <nav class="container mx-auto px-6 h-full flex items-center justify-between">
-
-    <!-- Left: Logos -->
     <div class="flex items-center space-x-4">
       <a href="https://thelewiscollege.edu.ph/" target="_blank"
          class="relative transition-transform transform hover:-translate-y-1 hover:scale-110 
@@ -164,7 +133,6 @@
       </a>
     </div>
 
-    <!-- Right: Desktop Nav -->
     <div class="hidden md:flex space-x-8">
       <a href="#home"
          class="relative text-white text-lg font-medium transition-all duration-300 transform hover:scale-110 hover:text-cyan-400
@@ -717,33 +685,35 @@
   const galleryItems = document.querySelectorAll("#gallery-grid > div");
   const fadeOverlay = document.getElementById("fade-overlay");
 
-  let itemsToShow = 10; // 👈 Show 8 images per click
-  let currentIndex = 0; // Start index
+  let itemsToShow = 10; // Number of images per click
+  let currentIndex = itemsToShow; // Start after showing the first batch
 
-  // Hide everything after the first 8
+  // Initially hide items after the first batch
   galleryItems.forEach((item, index) => {
     if (index >= itemsToShow) {
       item.classList.add("hidden");
     }
   });
 
-  // Show 8 more on button click
+  // Show more on button click
   showMoreBtn.addEventListener("click", () => {
-    currentIndex += itemsToShow;
+    const nextIndex = currentIndex + itemsToShow;
 
-    galleryItems.forEach((item, index) => {
-      if (index < currentIndex + itemsToShow) {
-        item.classList.remove("hidden");
-      }
-    });
+    // Show only the next batch (no rearranging)
+    for (let i = currentIndex; i < nextIndex && i < galleryItems.length; i++) {
+      galleryItems[i].classList.remove("hidden");
+    }
 
-    // Hide button & fade overlay if all items are shown
-    if (currentIndex + itemsToShow >= galleryItems.length) {
+    currentIndex = nextIndex;
+
+    // Hide button & fade overlay when all items are visible
+    if (currentIndex >= galleryItems.length) {
       showMoreBtn.style.display = "none";
       fadeOverlay.style.display = "none";
     }
   });
 </script>
+
 
 
 

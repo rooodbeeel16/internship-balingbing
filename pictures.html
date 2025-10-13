@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gallery | Balingbing</title>
+  <link rel="icon" type="image/png" href="assets/wb.png" />
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+
+  <!-- Font Awesome -->
+  <script src="https://kit.fontawesome.com/a2d9d5f3a2.js" crossorigin="anonymous"></script>
+
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f9fafb;
+      color: #1e293b;
+      scroll-behavior: smooth;
+    }
+
+    /* Hover & animation */
+    .image-hover {
+      transition: all 0.4s ease;
+    }
+
+    .image-hover:hover {
+      transform: scale(1.05);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header id="main-header"
+        class="fixed top-0 z-50 w-full h-20 bg-gradient-to-r from-gray-100 to-white
+               shadow-[0_6px_20px_rgba(0,0,0,0.1)] border-b border-gray-200
+               transition-all duration-300">
+    <nav class="container mx-auto px-6 h-full flex items-center justify-between">
+
+      <div class="flex items-center gap-2 sm:gap-3">
+
+        <a href="https://thelewiscollege.edu.ph/" target="_blank"
+           class="group transition-transform hover:scale-110">
+          <img src="assets/pictures/logo/tlc.png" 
+               class="h-12 w-12 rounded-full object-contain shadow-md border-2 border-transparent group-hover:border-blue-500/40 transition-colors" />
+        </a>
+
+        <a href="https://thelewiscollege.edu.ph/" target="_blank"
+           class="group transition-transform hover:scale-110">
+          <img src="assets/pictures/logo/Sorsogon_Provincial_Seal.png" 
+               class="h-12 w-12 rounded-full object-contain shadow-md border-2 border-transparent group-hover:border-blue-500/40 transition-colors" />
+        </a>
+        
+        <!-- Text -->
+        <div class="hidden sm:block">
+          <span class="text-xl sm:text-3xl font-extrabold text-black tracking-wide font-serif">
+            Sorsogon Provincial Government
+            <p class="text-sm text-gray-800">Government Office</p>
+          </span>
+        </div>
+      </div>
+
+      <div class="hidden md:flex items-center space-x-10">
+        <a href="index.html#home" class="relative text-black text-lg font-medium transition-all duration-300 hover:text-blue-600 px-3 py-2 rounded-full transform hover:scale-105">Home</a>
+        <a href="index.html#about-me" class="relative text-black text-lg font-medium transition-all duration-300 hover:text-blue-600 px-3 py-2 rounded-full transform hover:scale-105">About Me</a>
+        <a href="index.html#gallery-img" class="relative text-black text-lg font-medium transition-all duration-300 hover:text-blue-600 px-3 py-2 rounded-full transform hover:scale-105">Gallery</a>
+        <a href="index.html#blog" class="relative text-black text-lg font-medium transition-all duration-300 hover:text-blue-600 px-3 py-2 rounded-full transform hover:scale-105">Blog</a>
+      </div>
+
+      <div class="md:hidden">
+        <button id="mobile-menu-button"
+                class="text-gray-500 hover:text-gray-900 transition-transform hover:scale-110 focus:outline-none">
+          <svg class="h-7 w-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M4 6h16M4 12h16m-7 6h7"></path>
+          </svg>
+        </button>
+      </div>
+    </nav>
+
+    <div id="mobile-menu" class="hidden md:hidden bg-white/95 backdrop-blur-sm border-t border-gray-200 shadow-xl py-2">
+      <a href="index.html#home" class="block px-6 py-3 text-gray-600 hover:text-gray-900 hover:bg-gray-100 transition">Home</a>
+      <a href="index.html#about-me" class="block px-6 py-3 text-gray-600 hover:text-gray-900 hover:bg-gray-100 transition">About Me</a>
+      <a href="index.html#gallery-img" class="block px-6 py-3 text-gray-600 hover:text-gray-900 hover:bg-gray-100 transition">Gallery</a>
+      <a href="index.html#blog" class="block px-6 py-3 text-gray-600 hover:text-gray-900 hover:bg-gray-100 transition">Blog</a>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main class="pt-28 pb-16 px-6">
+    <div class="max-w-6xl mx-auto">
+      <!-- Title -->
+      <div class="text-center mb-10">
+        <h1 class="text-4xl font-bold text-gray-900 mb-2 font-serif">
+         Gallery
+        </h1>
+        <p class="text-gray-600">
+            Showcasing OJT Experiences and Work Environment        
+          </p>
+      </div>
+
+      <!-- Grid Gallery -->
+      <section class="py-12 px-6">
+        <div class="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+
+          <!-- Example Images -->
+          <img src="assets/pictures/1.jpg"
+               alt="Team Orientation" class="gallery-img image-hover w-full h-64 object-cover rounded-lg cursor-pointer">
+
+          <img src="assets/pictures/2.jpg"
+               alt="Office Setup" class="gallery-img image-hover w-full h-64 object-cover rounded-lg cursor-pointer">
+
+          <img src="assets/pictures/3.jpg"
+               alt="Meeting with Supervisor" class="gallery-img image-hover w-full h-64 object-cover rounded-lg cursor-pointer">
+
+          <img src="assets/pictures/week2/1.jpg"
+               alt="Workspace" class="gallery-img image-hover w-full h-64 object-cover rounded-lg cursor-pointer">
+
+          <img src="assets/pictures/week2/2.jpg"
+               alt="Lunch Break" class="gallery-img image-hover w-full h-64 object-cover rounded-lg cursor-pointer">
+
+          <img src="assets/pictures/week2/3.jpg"
+               alt="Working on Tasks" class="gallery-img image-hover w-full h-64 object-cover rounded-lg cursor-pointer">
+
+          <img src="assets/pictures/week3/1.jpg"
+               alt="Team Collaboration" class="gallery-img image-hover w-full h-64 object-cover rounded-lg cursor-pointer">
+
+          <img src="assets/pictures/week3/2.jpg"
+               alt="End of Day Recap" class="gallery-img image-hover w-full h-64 object-cover rounded-lg cursor-pointer">
+
+          <img src="assets/pictures/week4/1.jpg"
+          alt="Team Orientation" class="gallery-img image-hover w-full h-64 object-cover rounded-lg cursor-pointer">
+
+          <img src="assets/pictures/week4/2.jpg"
+               alt="Office Setup" class="gallery-img image-hover w-full h-64 object-cover rounded-lg cursor-pointer">
+
+          <img src="assets/pictures/week4/3.jpg"
+               alt="Meeting with Supervisor" class="gallery-img image-hover w-full h-64 object-cover rounded-lg cursor-pointer">
+
+          <img src="assets/pictures/week6/1.jpg"
+          alt="Meeting with Supervisor" class="gallery-img image-hover w-full h-64 object-cover rounded-lg cursor-pointer">
+
+          <img src="assets/pictures/week5/2.jpg"
+          alt="Meeting with Supervisor" class="gallery-img image-hover w-full h-64 object-cover rounded-lg cursor-pointer">
+
+          <img src="assets/pictures/week5/3.jpg"
+          alt="Meeting with Supervisor" class="gallery-img image-hover w-full h-64 object-cover rounded-lg cursor-pointer">
+          
+          <img src="assets/pictures/week5/1.jpg"
+          alt="Meeting with Supervisor" class="gallery-img image-hover w-full h-64 object-cover rounded-lg cursor-pointer">
+
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="text-gray-800 py-12 bg-white">
+  <div class="container mx-auto px-6 max-w-6xl flex flex-col md:flex-row items-center md:items-start justify-between">
+
+    <!-- Left: Credits -->
+    <div class="mb-8 md:mb-0 text-center md:text-left">
+      <p class="text-gray-700 font-semibold text-lg">Jherill Balingbing</p>
+      <p class="text-gray-500 text-sm">BSIT 4 - The Lewis College</p>
+    </div>
+
+    <!-- Right: Navigation + Socials -->
+    <div class="flex flex-col items-center md:items-end space-y-6">
+
+      <!-- Navigation Links -->
+      <nav class="flex space-x-6 text-gray-600 font-medium">
+        <a href="index.html#home" class="transition hover:text-blue-600 hover:translate-y-[-2px]">Home</a>
+        <a href="index.html#about-me" class="transition hover:text-blue-600 hover:translate-y-[-2px]">About</a>
+        <a href="index.html#gallery" class="transition hover:text-blue-600 hover:translate-y-[-2px]">Gallery</a>
+        <a href="index.html#blog" class="transition hover:text-blue-600 hover:translate-y-[-2px]">Blog</a>
+      </nav>
+
+      <!-- Social Media Icons -->
+      <div class="flex space-x-5">
+        <!-- Instagram -->
+        <a href="https://www.instagram.com/jherillbalingbing/" target="_blank"
+          class="text-gray-500 hover:text-pink-500 transition transform hover:scale-125">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 2h10a5 5 0 015 5v10a5 5 0 01-5 5H7a5 5 0 01-5-5V7a5 5 0 015-5z" />
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11.37a4 4 0 11-8 0 4 4 0 018 0z" />
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.5 6.5h.01" />
+          </svg>
+        </a>
+        <!-- Gmail -->
+        <a href="https://www.tiktok.com/@jherillbalingbing2?_t=ZS-8zr6Us4J7to&_r=1" target="_blank"
+          class="text-gray-500 hover:text-black transition transform hover:scale-125">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12.75 2a.75.75 0 0 1 .75.75c0 3.27 2.48 5.25 5.25 5.25.41 0 .75.34.75.75v2.5a.75.75 0 0 1-.75.75 7.49 7.49 0 0 1-4.5-1.5v6.25a5.75 5.75 0 1 1-5.75-5.75.75.75 0 0 1 .75.75v2.46a.75.75 0 0 1-.56.73 2.25 2.25 0 1 0 2.81 2.18V2.75a.75.75 0 0 1 .75-.75h1.5z"/>
+          </svg>
+        </a>
+
+        <!-- Facebook -->
+        <a href="https://www.facebook.com/jherill.balingbing.3" target="_blank"
+          class="text-gray-500 hover:text-blue-500 transition transform hover:scale-125">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3V2z" />
+          </svg>
+        </a>
+      </div>
+
+    </div>
+  </div>
+</footer>
+
+  <!-- Lightbox -->
+  <div id="lightbox" class="hidden fixed inset-0 bg-black/90 flex items-center justify-center z-50">
+    <button id="closeLightbox" class="absolute top-6 right-6 text-white text-3xl font-bold hover:text-gray-300 transition">&times;</button>
+    <img id="lightboxImage" src="" alt="Preview" class="max-h-[90vh] max-w-[90vw] rounded-xl shadow-2xl border-4 border-white">
+  </div>
+
+  <script>
+    const images = document.querySelectorAll('.gallery-img');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImage = document.getElementById('lightboxImage');
+    const closeLightbox = document.getElementById('closeLightbox');
+
+    images.forEach(img => {
+      img.addEventListener('click', () => {
+        lightboxImage.src = img.src;
+        lightbox.classList.remove('hidden');
+      });
+    });
+
+    closeLightbox.addEventListener('click', () => {
+      lightbox.classList.add('hidden');
+    });
+
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) {
+        lightbox.classList.add('hidden');
+      }
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Week 8 | Balingbing</title>
+  <link rel="icon" type="image/png" href="assets/wb.png" />
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f9fafb;
+      color: #1e293b;
+      scroll-behavior: smooth;
+    }
+
+    /* Frosted glass header */
+    .glass-header {
+      background-color: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    }
+
+    /* Subtle fade animation */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .animate-fade-in-up {
+      animation: fadeInUp 0.8s ease-out forwards;
+    }
+
+    /* Image hover effect */
+    .image-hover {
+      transition: all 0.4s ease;
+    }
+
+    .image-hover:hover {
+      transform: scale(1.05);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    }
+
+    /* Button hover */
+    .btn-hover {
+      transition: all 0.3s ease;
+    }
+
+    .btn-hover:hover {
+      background-color: #0051ff;
+      color: white;
+      transform: translateY(-2px);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header id="main-header"
+          class="fixed top-0 z-50 w-full h-20 bg-gradient-to-r from-gray-100 to-white
+                 shadow-[0_6px_20px_rgba(0,0,0,0.1)] border-b border-gray-200
+                 transition-all duration-300">
+    <nav class="container mx-auto px-6 h-full flex items-center justify-between">
+
+      <!-- Left Section -->
+      <div class="flex items-center gap-2 sm:gap-3">
+
+        <!-- TLC Logo -->
+        <a href="https://thelewiscollege.edu.ph/" target="_blank"
+           class="group transition-transform hover:scale-110">
+          <img src="assets/pictures/logo/tlc.png" 
+               class="h-12 w-12 rounded-full object-contain shadow-md border-2 border-transparent 
+                      group-hover:border-blue-500/40 transition-colors" />
+        </a>
+
+        <!-- Sorsogon Logo -->
+        <a href="https://thelewiscollege.edu.ph/" target="_blank"
+           class="group transition-transform hover:scale-110">
+          <img src="assets/pictures/logo/Sorsogon_Provincial_Seal.png" 
+               class="h-12 w-12 rounded-full object-contain shadow-md border-2 border-transparent 
+                      group-hover:border-blue-500/40 transition-colors" />
+        </a>
+
+        <!-- Text -->
+        <div class="hidden sm:block">
+          <span class="text-xl sm:text-3xl font-extrabold text-black tracking-wide font-serif">
+            Sorsogon Provincial Government
+          </span>
+          <p class="text-sm text-gray-800">Government Office</p>
+        </div>
+      </div>
+
+      <!-- Desktop Nav -->
+      <div class="hidden md:flex items-center space-x-10">
+        <a href="index.html#home"
+           class="relative text-black text-lg font-medium transition-all duration-300 hover:text-blue-600
+                   px-3 py-2 rounded-full transform hover:scale-105">
+          Home
+        </a>
+        <a href="index.html#about-me"
+           class="relative text-black text-lg font-medium transition-all duration-300 hover:text-blue-600
+                   px-3 py-2 rounded-full transform hover:scale-105">
+          About Me
+        </a>
+        <a href="index.html#gallery-img"
+           class="relative text-black text-lg font-medium transition-all duration-300 hover:text-blue-600
+                   px-3 py-2 rounded-full transform hover:scale-105">
+          Gallery
+        </a>
+        <a href="index.html#blog"
+           class="relative text-black text-lg font-medium transition-all duration-300 hover:text-blue-600
+                   px-3 py-2 rounded-full transform hover:scale-105">
+          Blog
+        </a>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <div class="md:hidden">
+        <button id="mobile-menu-button"
+                class="text-gray-500 hover:text-gray-900 transition-transform hover:scale-110 focus:outline-none">
+          <svg class="h-7 w-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M4 6h16M4 12h16m-7 6h7"></path>
+          </svg>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white/95 backdrop-blur-sm border-t border-gray-200 shadow-xl py-2">
+      <a href="index.html#home" class="block px-6 py-3 text-gray-600 hover:text-gray-900 hover:bg-gray-100 transition">Home</a>
+      <a href="index.html#about-me" class="block px-6 py-3 text-gray-600 hover:text-gray-900 hover:bg-gray-100 transition">About Me</a>
+      <a href="index.html#gallery-img" class="block px-6 py-3 text-gray-600 hover:text-gray-900 hover:bg-gray-100 transition">Gallery</a>
+      <a href="index.html#blog" class="block px-6 py-3 text-gray-600 hover:text-gray-900 hover:bg-gray-100 transition">Blog</a>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main class="pt-28 pb-16">
+    <section class="container mx-auto px-6 max-w-4xl">
+
+      <!-- Title -->
+      <h2 class="text-4xl font-extrabold mb-3 animate-fade-in-up text-gray-900 text-center font-serif">
+        Week 8
+      </h2>
+      <br>
+
+      <!-- Reflection -->
+      <div class="space-y-4 text-justify animate-fade-in-up">
+        <p class="text-base leading-relaxed">   
+            Technical Support for OPAG and SPUIS Data Preparation During this week, my primary duties involved technical support for identification card production and administrative data preparation. I was responsible for the reprinting and precise editing of ID cards for the Office of the Provincial Agriculturist (OPAG). I focused on ensuring that all employee details and design elements were accurate before the final print.        </p>
+
+        <p class="text-base leading-relaxed">
+            Additionally, I dedicated time to technical preparation for the SPUIS (Sorsogon Provincial Union Information System) database. I reviewed and studied document formatting techniques (.docx) to ensure I was fully prepared for the scheduled work on Wednesday. This preparation was specifically focused on organizing and managing the Sorsogon user lists, ensuring the data was clean and ready for integration.        </p>
+
+    
+      </div>
+
+      <!-- Image Grid -->
+      <div class="mt-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 animate-fade-in-up">
+        <img src="assets/pictures/week8/1.jpeg" alt="Internship Photo 1" class="rounded-2xl object-cover h-64 w-full image-hover cursor-pointer" onclick="openModal(this.src)">
+        <img src="assets/pictures/week8/2.jpeg" alt="Internship Photo 2" class="rounded-2xl object-cover h-64 w-full image-hover cursor-pointer" onclick="openModal(this.src)">
+        <img src="assets/pictures/week8/3.jpeg" alt="Internship Photo 2" class="rounded-2xl object-cover h-64 w-full image-hover cursor-pointer" onclick="openModal(this.src)">
+
+      </div><br>
+    </section>
+  </main><br><br>
+
+  <!-- IMAGE MODAL -->
+  <div id="imageModal" class="fixed inset-0 bg-black bg-opacity-80 hidden items-center justify-center z-50">
+    <span class="absolute top-6 right-8 text-white text-3xl cursor-pointer" onclick="closeModal()">&times;</span>
+    <img id="modalImg" class="max-h-[90vh] max-w-[90vw] rounded-xl shadow-2xl border border-gray-200" />
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="text-gray-800 py-12 bg-#f9fafb">
+  <div class="container mx-auto px-6 max-w-6xl flex flex-col md:flex-row items-center md:items-start justify-between">
+
+    <!-- Left: Credits -->
+    <div class="mb-8 md:mb-0 text-center md:text-left">
+      <p class="text-gray-700 font-semibold text-lg">Jherill Balingbing</p>
+      <p class="text-gray-500 text-sm">BSIT 4 - The Lewis College</p>
+    </div>
+
+    <!-- Right: Navigation + Socials -->
+    <div class="flex flex-col items-center md:items-end space-y-6">
+
+      <!-- Navigation Links -->
+      <nav class="flex space-x-6 text-gray-600 font-medium">
+        <a href="index.html#home" class="transition hover:text-blue-600 hover:translate-y-[-2px]">Home</a>
+        <a href="index.html#about-me" class="transition hover:text-blue-600 hover:translate-y-[-2px]">About</a>
+        <a href="index.html#gallery-img" class="transition hover:text-blue-600 hover:translate-y-[-2px]">Gallery</a>
+        <a href="index.html#blog" class="transition hover:text-blue-600 hover:translate-y-[-2px]">Blog</a>
+      </nav>
+
+      <!-- Social Media Icons -->
+      <div class="flex space-x-5">
+        <!-- Instagram -->
+        <a href="https://www.instagram.com/jherillbalingbing/" target="_blank"
+          class="text-gray-500 hover:text-pink-500 transition transform hover:scale-125">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 2h10a5 5 0 015 5v10a5 5 0 01-5 5H7a5 5 0 01-5-5V7a5 5 0 015-5z" />
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11.37a4 4 0 11-8 0 4 4 0 018 0z" />
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.5 6.5h.01" />
+          </svg>
+        </a>
+
+        <!-- TikTok -->
+        <a href="https://www.tiktok.com/@jherillbalingbing2?_t=ZS-90VhzI9edJC&_r=1" target="_blank"
+          class="text-gray-500 hover:text-black transition transform hover:scale-125">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M12.75 2a.75.75 0 0 1 .75.75c0 3.27 2.48 5.25 5.25 5.25.41 0 .75.34.75.75v2.5a.75.75 0 0 1-.75.75 7.49 7.49 0 0 1-4.5-1.5v6.25a5.75 5.75 0 1 1-5.75-5.75.75.75 0 0 1 .75.75v2.46a.75.75 0 0 1-.56.73 2.25 2.25 0 1 0 2.81 2.18V2.75a.75.75 0 0 1 .75-.75h1.5z" />
+          </svg>
+        </a>
+
+        <!-- Facebook -->
+        <a href="https://www.facebook.com/jherill.balingbing.3" target="_blank"
+          class="text-gray-500 hover:text-blue-500 transition transform hover:scale-125">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3V2z" />
+          </svg>
+        </a>
+      </div>
+
+    </div>
+  </div>
+</footer>
+
+<!-- Font Awesome for icons -->
+<script src="https://kit.fontawesome.com/a2d9d5f3a2.js" crossorigin="anonymous"></script>
+
+
+
+
+  <!-- JavaScript for Modal -->
+  <script>
+    // Image Modal Logic
+    function openModal(src) {
+      document.getElementById('modalImg').src = src;
+      document.getElementById('imageModal').classList.remove('hidden');
+      document.getElementById('imageModal').classList.add('flex');
+    }
+
+    function closeModal() {
+      document.getElementById('imageModal').classList.add('hidden');
+      document.getElementById('imageModal').classList.remove('flex');
+    }
+
+    document.getElementById('imageModal').addEventListener('click', function(e) {
+      if (e.target.id === 'imageModal') closeModal();
+    });
+
+    // Mobile Menu Toggle
+    const menuBtn = document.getElementById('mobile-menu-button');
+    const menu = document.getElementById('mobile-menu');
+
+    menuBtn.addEventListener('click', () => {
+      menu.classList.toggle('hidden');
+    });
+  </script>
+
+  <!-- Font Awesome for Icons -->
+  <script src="https://kit.fontawesome.com/a2d9d5f3a2.js" crossorigin="anonymous"></script>
+
+</body>
+</html>
